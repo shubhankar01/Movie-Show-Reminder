@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Movie Reminder <%= @insider.mv_name %></h1>
+    <p>
+      This is to remind you that the movie <%= @insider.mv_name %>
+      will be shown in <%= @insider.ch_name %> at <%= @insider.timeslot.to_i*3 %>:00 hrs - <%= @insider.timeslot.*3+2 %>:00 hrs.<br>
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

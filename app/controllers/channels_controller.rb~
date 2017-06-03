@@ -1,0 +1,27 @@
+class ChannelsController < ApplicationController
+  def index
+   @list=Channel.currently_playing
+  end
+  def show
+    @channel = Channel.find(params[:id])
+    @data=params[:data]
+    
+    @content=Channel.give_content(params[:id],@data["timeslot"])
+    @reminderDetails=Channel.give_reminder_for_user(@data["user_id"])
+  end
+  def search
+    redirect_to movies_search_path(:search => params[:search])
+    #redirect_to controller: 'movies', action: 'edit', id: params[:search]
+  end
+  def create_reminders
+    
+    @reminder=Reminder.new
+    @reminder.user_id=params[:user_id]
+    @reminder.slot_id=params[:slot_id]
+    @reminder.save
+    flash[:notice] = "Movie Reminded"
+    redirect_to :back
+    
+  end
+  
+end

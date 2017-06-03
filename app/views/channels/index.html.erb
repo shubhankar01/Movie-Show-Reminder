@@ -1,0 +1,35 @@
+<div class="jumbotron text-center">
+<h1> Movies </h1>
+<p> Search for your favourite movie timings
+</p>
+
+<%= form_tag :action => 'search', :class=>'form-inline'  do %>
+  <%= text_field_tag :search, params[:search], size:50,placeholder:"Eg. Batman or Dilwale",class:"form-control search-bar" %>
+  <div class="row">
+     <div class="span6 offset1">
+         <%= submit_tag "Search", :class => "btn-primary btn btn-metric-current" ,:name => nil %>
+      </div>
+   </div>
+<% end %>
+</div>
+<div class="row currently-showing" >Now Showing</div>
+<div id="movies" class="container-fluid text-center">
+  <div class="row">
+	  <% @list.each do |row| %>
+	      <div class="col-sm-4">
+		 <div class="thumbnail">
+		    <a href="#">
+		        <%= image_tag(row.mv_image,:alt =>row.mv_name,:class => "img-responsive") %>
+                    
+		    </a>
+		  <p>
+                  <%= image_tag(row.ch_image,:class => "img-responsive index-channel-image") %>
+<span style="display: inline-block;"> <strong><%= link_to row.ch_name, channel_path(:data=> {:slot_id=>row.slot_id,:timeslot =>row.timeslot,:ch_id=>row.ch_id,:ch_desc=>row.ch_desc,:ch_name=>row.ch_name,:ch_image=>row.ch_image,:user_id => session[:user_id],:mv_id=>row.mv_id ,:mv_image=>row.mv_image,:mv_name=>row.mv_name,:mv_desc=>row.mv_desc ,:mv_length=>row.mv_length},:id => row.ch_id) %>
+              </strong> </span></p>
+		 </div>
+	       </div>
+	   <% end %>
+   </div>
+	
+</div>
+</div>

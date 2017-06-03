@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment</title>
+  <%= stylesheet_link_tag 'bootstrap.min.css','common', :media => 'screen' %>
+  
+  <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', 'bootstrap.min.js','data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <%= link_to "LOGO", root_url, :class => "navbar-brand" %>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">	   
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="#about">ABOUT</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <li>
+	  <% if current_user %>
+            <li><a href="#"  data-toggle="popover" title="Notification" > <span class="glyphicon glyphicon-user logo"> </span> </a></li>
+	    <li><a><%= current_user.email %></a></li>
+	    <li><%= link_to "LOG OUT", log_out_path %></li>
+        </li>
+        <li>
+	  <% else %>
+	    <%= link_to "SIGN UP", sign_up_path %>
+         </li>
+         <li>
+	    <%= link_to "LOG IN", log_in_path %>
+	  <% end %>
+	 </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+
+<%= yield %>
+<footer class="row">
+		<div class="container"><br/><br/>
+
+			<div>
+				<span class="container">
+					
+					<span class="pull-left">Design by :
+						<a href="#">shivanimadhok@94gmail.com</a></span>
+				</span></div>
+		</div></footer>
+</body>
+</html>

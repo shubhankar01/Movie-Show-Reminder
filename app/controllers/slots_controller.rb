@@ -1,0 +1,23 @@
+class SlotsController < ApplicationController
+  def new
+    
+    @slot=Slot.new
+    @movie=Movie.all
+    @channel=Channel.all
+  end
+  def create
+   
+   @slot=Slot.new(slot_params)
+   if @slot.save
+     flash[:notice] = "Congratulations you have registered successfully"
+     redirect_to root_url
+   else
+      flash[:notice] = "Something Went wrong! try again"
+      redirect_to root_url
+   end
+  end
+  private
+    def slot_params
+      params.require(:slot).permit(:channel_id, :movie_id, :timeslot)
+    end
+end

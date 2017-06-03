@@ -1,0 +1,65 @@
+<div class="alert alert-success wrapper">
+<%= image_tag(@data["ch_image"],:alt =>@data["ch_name"],:class => "img-responsive") %>
+<h1> <b>Welcome to <%= @data["ch_name"] %></b></h1>
+<h4> <%= @data["ch_desc"] %></h4>
+</div>
+<div class="row ">
+  <div class="row inner" >Currently Showing</div>
+  <div class="col-md-5 size-image">
+     <%= image_tag(@data["mv_image"],:alt =>@data["mv_name"],:class => "img-responsive") %>
+     
+  </div>
+  <div class="col-md-7">
+   <div class="panel panel-primary newpanel">
+     <h2><div class="panel-heading"><strong><%=link_to @data["mv_name"] ,movie_path(:id => @data["mv_id"]) %></strong></div></h2>
+      <div class="desc"><strong>Movie Description</strong></div>
+      <div class="panel-body">
+	  <h5><strong>Title: <%= @data["mv_name"] %></strong></h5>
+	  <h5><strong>Description: <%= @data["mv_desc"] %></strong></h5>
+	  <h5><strong>Length: <%= @data["mv_length"] %></strong></h5>
+          <h5><strong>Show Time: <%= @data["timeslot"].to_i*3 %>:00 hrs - <%= @data["timeslot"].to_i*3+2 %>:00 hrs </strong></h5>
+
+          <% if @reminderDetails.index{|r| r.slot_id.to_s == @data["slot_id"].to_s} %>
+             <div class="reminded"> Reminded</div>
+          <% elsif current_user %>
+              <%= button_to 'Remind Me', {:controller => "channels", :action => "create_reminders",:user_id=> session[:user_id],:slot_id=>@data["slot_id"]} , :method=>:post,:class =>"btn btn-success"   %>
+	  <% else %>
+            
+	    <div class="btn-primary reminder-signup"><%= link_to "SIGN UP TO SET REMINDER", sign_up_path %></div>
+	  <% end %>
+           
+	  </div>
+    </div>
+</div>
+</div>
+<br>
+<div class="row inner" >Coming Up Next</div>
+<br>
+
+<% @content.each do |row| %>
+  <div class="row">  
+	        <div class="col-md-4 upcoming">
+                       <%= image_tag(row.mv_image,:alt =>row.mv_name,:class => "img-responsive") %>
+ 		       
+                 </div>
+		  <div class="col-md-4">
+			 <h5>Movie Name :  <%=link_to row.mv_name,movie_path(:id => row.mv_id) %></h5>
+			 <h5>Description : <%= row.mv_desc %></h5>
+			 <h5>Length : <%= row.mv_length %> </h5>
+			 <h5>Show Time : <%= row.timeslot.to_i*3 %>:00 hrs - <%= (row.timeslot.*3)+2 %>:00 hrs</h5>
+	          </div>
+		  <div class="col-md-4">
+		         <% if @reminderDetails.index{|r| r.slot_id.to_s == row.slot_id.to_s} %>
+			     <div class="reminded"> Reminded</div>
+			  <% elsif current_user %>
+			      <%= button_to 'Remind Me', {:controller => "channels", :action => "create_reminders" ,:user_id=> session[:user_id],:slot_id=>row.slot_id} , :method=>:post ,:class =>"btn btn-success" %>
+			  <% else %>
+                               <div class="btn-primary reminder-signup"><%= link_to "SIGN UP TO SET REMINDER", sign_up_path %></div>
+			  <% end %>
+                   </div>
+	       
+	   
+   </div>
+<% end %>
+
+

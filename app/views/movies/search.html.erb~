@@ -1,0 +1,33 @@
+<% if !@movie[0].nil? %>
+   <div id="heroArea" class="clearfix search-wrapper">
+            
+		<div class="container">
+                   <h1> <%= @movie[0].mv_name%> </h1>
+                   <%= image_tag(@movie[0].mv_image,:class => "img-responsive movie-image") %>
+		    
+
+
+			<h3>Duration : <%= @movie[0].mv_length %></h3>
+			<h3>Description :<%= @movie[0].mv_desc %></h3>
+                 </div>
+	</div>
+       <section id="clients" class="container clearfix">
+		<h3>Showing On</h3>
+		<hr />
+                <% @movie.each do |row| %>
+		<div class="col-md-2 col-sm-4 col-xs-12">
+			<%= row.mv_name %>
+                  
+                        <%= image_tag(row.ch_image,:class => "img-responsive channel-image") %>
+                        <%= row.timeslot.to_i*3 %>:00 hrs - <%= row.timeslot.*3+2 %>:00 hrs
+		</div>
+                <%end%>
+	</section>	
+
+  <% else %>
+  
+   <div class="search-error">
+   <h1>No Results Found !</h1>
+   </div>
+  <%end%>
+

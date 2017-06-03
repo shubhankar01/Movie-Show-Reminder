@@ -1,0 +1,23 @@
+.size-image{
+	margin-left:40px;
+	width:750px;
+	height:500px;
+}
+.img-responsive {
+    display: block;
+    width: 100%;
+    height:100%;
+}
+.panel{
+	margin-top:70px;
+	margin-bottom:70px;
+	margin-left:100px;
+	margin-right:80px;
+	height:300px;
+	width: 450px;
+}
+.upcoming{
+	margin-left:80px;
+	width:200px;
+	height:100px;
+}

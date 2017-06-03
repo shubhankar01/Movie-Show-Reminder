@@ -1,0 +1,48 @@
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<h1>Slots#new</h1>
+
+<%= form_for @slot do |f| %>
+  <% if @slot.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @slot.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+   <% @movie.each do |movie| %>
+    
+      <%= movie.id %>
+      <%= movie.description %>
+   <% end %>
+  <% if !@movie.blank?%>
+   <% for item in @movie %>
+      <% item.description %> 
+      <% item.id %>
+     <% end %>
+  <% end %>
+<p>
+  <% if !@channel.blank?%>
+   <% for item in @channel %>
+      <% item.name %> 
+      <% item.id %>
+     <% end %>
+  <% end %>
+</p>
+  <p>
+    
+    <%= f.label :channel %><br />
+    <%= f.text_field :channel_id %>
+  </p>
+  <p>
+    <%= f.label :movie %><br />
+    <%= f.text_field :movie_id %>
+  </p>
+  <p>
+    <%= f.label :timeslot %><br />
+    <%= f.text_field :timeslot %>
+  </p>
+  <p class="button"><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,146 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+</script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="channel.css">
+</head>
+<body>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+   
+       <div class="item active">
+        <img src="../../../assests/images/image.jpg" alt="sultan" style="width:100%;height:500px" class="img-responsive">
+      </div>   
+     
+	  <div class="item">
+        <img src="http://cdn.idigitaltimes.com/sites/idigitaltimes.com/files/styles/large/public/2015/09/22/spiderman-movie-poster.jpg" alt="spiderman" style="width:100%;height:500px" class="img-responsive">     
+      </div>
+	        <div class="item">
+	   <img src="http://wallpapers.filmibeat.com/ph-1024x768/2013/05/yeh-jawaani-hai-deewani_1368597822.jpg" alt="yjhd" style="width:100%;height:500px" class="img-responsive">
+      </div> 
+	  <div class="item">
+        <img src="http://media1.santabanta.com/full1/Bollywood%20Movies/Love%20Aaj%20Kal/love-aaj-kal-1a.jpg" alt="loveajkal" style="width:100%;height:500px" class="img-responsive">     
+      </div>
+	  <div class="item">
+        <img src="http://i0.wp.com/desijhankaar.com/wp-content/uploads/2015/12/Airlift-Hindi-Movie-Poster.jpg" alt="airlift" style="width:100%;height:500px" class="img-responsive">     
+      </div>
+	   <div class="item">
+        <img src="http://www.newhdwallpapers.in/wp-content/uploads/2013/08/Movie-Despicable-Me-2-Poster-wide.jpg" alt="minions" style="width:100%;height:500px" class="img-responsive">     
+      </div>
+	  <div class="item">
+        <img src="http://screencrush.com/442/files/2016/03/batman-vs-superman-review-pic.jpg?w=720&cdnnode=1" alt="batman" style="width:100%;height:500px" class="img-responsive">     
+      </div>
+	<div class="form-group">	  
+	 <div class="container">
+            <div class="row">
+<form class="form-inline" >
+<input type="search" class="form-control" size="50" id="search" placeholder="Enter to search">
+<button class="btn btn-primary">
+<span class="glyphicon glyphicon-search"></span></button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br><br><br>
+<div id="movies" class="container-fluid text-center" style="overflow:auto;height:800px;width:100%">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+	  <a href="#">
+        <img src="https://s-media-cache-ak0.pinimg.com/736x/48/43/37/484337b1ebf62ceecd7eaa7e6cad1e75.jpg" alt="Sony" style="max-height:400px; width:100%" class="img-responsive">
+		</a>
+        <p><strong>Sony</strong></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+	   <a href="#">
+        <img src="http://www.indicine.com/img/2016/04/Sultan-Poster-740x1036.jpg" alt="Setmax" style="max-height:400px; width:100%" class="img-responsive">
+        </a>
+		<p><strong>Set Max</strong></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+	   <a href="#">
+        <img src="http://www.bharatmovies.com/hindi/img/MovieImg/Rab-Ne-Bana-Di-Jodi-2008-MovieImg.jpg" alt="Stargold" style="max-height:400px; width:100%" class="img-responsive">
+        </a>
+		<p><strong>Star Gold</strong></p>
+      </div>
+    </div>
+	</div>
+	<br>
+	<div class="row">
+	    <div class="col-sm-4">
+      <div class="thumbnail">
+	   <a href="#">
+        <img src="http://www.freedesign4.me/wp-content/gallery/posters/free-movie-film-poster-the_dark_knight_movie_poster.jpg" alt="Sonypix" style="max-height:400px; width:100%" class="img-responsive">
+        </a>
+		<p><strong>Sony Pix</strong></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+	   <a href="#">
+        <img src="http://news.xinhuanet.com/english/photo/2012-05/11/131581770_31n.jpg" alt="moviesok" style="max-height:400px ;width:100%" class="img-responsive">
+        </a>
+		<p><strong>Movies OK</strong></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+	   <a href="#">
+        <img src="http://songsmp3.info/assets/images/1/28158-Airlift%20(2016).jpg" alt="starplus" style="max-height:400px; width:100%" class="img-responsive">
+       </a>       
+	   <p><strong>Start Plus</strong></p>
+      </div>
+    </div>
+	</div>
+	<br>
+	<div class="row">
+	    <div class="col-sm-4">
+      <div class="thumbnail">
+	   <a href="#">
+        <img src="http://globoxrentals.com/site/wp-content/uploads/2014/10/11389-poster-of-namastey-london-with-akshay-and-katrina.jpg" alt="lifeok" style="max-height:400px; width:100%" class="img-responsive">
+        </a>
+		<p><strong>Life OK</strong></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+	   <a href="#">
+        <img src="http://movie.thementalclub.com/wp-content/uploads/2016/05/Housefull-2010-550x413.jpg" alt="starmax" style="max-height:400px; width:100%" class="img-responsive">
+        </a>
+		<p><strong>Star Max</strong></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+	   <a href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a3/RDB_soundtrack.jpg" alt="jashan" style="max-height:400px; width:100%" class="img-responsive">
+        </a>
+		<p><strong>Jashan</strong></p>
+      </div>
+    </div>
+	</div>
+	
+</div>
+</div>
+
+
+
+
+
+</body>
+</html>
