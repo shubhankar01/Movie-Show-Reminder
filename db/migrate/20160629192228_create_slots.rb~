@@ -1,0 +1,10 @@
+class CreateSlots < ActiveRecord::Migration
+  def change
+    create_table :slots do |t|
+      t.integer :movie_id
+      t.integer :channel_id
+
+      t.timestamps null: false
+    end
+  end
+end
